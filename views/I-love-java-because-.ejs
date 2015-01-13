@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="/javascripts/jquery-1.11.1.min.js"></script>
+    <script src="/javascripts/I-love-java-because-.js"></script>
+    <script src="/javascripts/footer.js"></script>
+    <script src="/javascripts/header.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel='stylesheet' href='/stylesheets/footer.css' />
+
+    <link rel='stylesheet' href='/stylesheets/I-love-java-because-.css' />
+</head>
+<body>
+<!--header-->
+<div class="header">
+    <div class="all">
+        <div class="heartlovepower">
+            <div onclick="openHomePage()" class="open-home-page">
+                <div class="heart"></div>
+                <div class="powerlove">
+                    <div class="love" ></div>
+                    <div class="java"></div>
+                    <span class="power">powered by</span><span class="exp"> expresscurate</span>
+                </div>
+                <div class="clear2"></div>
+            </div>
+        </div>
+        <div class="buttons">
+           <button class="add" onclick="openExpressYourLove()">ADD LOVE NOTE</button>
+
+                <button class="like" onclick="openSourcioFb()">
+                    <div class="like_note" ></div>
+                    <span class="note">LIKE</span>
+                </button>
+
+        </div>
+    </div>
+    <div class="clear2"></div>
+</div>
+<!--header-->
+
+
+<!--content-->
+<div class="view_content">
+    <div id="prev"  class="view_previous" onclick="prev()"></div>
+
+    <div class="view_item">
+        <div class="view_inner">
+       <span class="view_love-heading">
+            I
+           <img src="../images/form-group.png" class="view_img">
+               JAVA
+       <span class="because">BECAUSE</span>
+            </span>
+            <div class="view_message" id="text"><%= data[0].message %></div>
+            </span>
+            <div class="view_twitter name<%= url %>" id="divNameID" onclick="return tweetHref(this)">
+
+                <span class="view_tweet " id="nameID"  title="<%= data[0].name %>" ><%= data[0].name %></span>
+
+            </div>
+            <div class="clear2"></div>
+        </div>
+    </div>
+    <div id="next" class="view_next" onclick="next()"></div>
+
+    <div class="view_social_btn">
+        <div  class="fbShareUrl" onclick="return fbShareFunc()"><button class="view_social_fb">facebook</button></div>
+        <div class="btn"  target="_blank"  name="<%=data[0].message%>" onclick="return tweetShare()"><button class="view_social_tweet">tweet</button></div>
+    </div>
+    <div class="clear2"></div>
+</div>
+
+<input type="hidden" value="<%= firstDataID %>" id="firstDataID">
+<input type="hidden" value="<%= lastDataID %>" id="lastDataID">
+<input type="hidden" value="<%= lastDate %>" id="lastDate">
+<!--end of content-->
+
+
+<!--footer--->
+<div class="footer">
+    <div class="footer_container">
+        <ul class="footer_ul">
+            <li class="about"><h2 class="h2">ABOUT</h2>
+        <span class="about_span">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </span>
+            </li>
+
+            <li class="express_curate"><h2 class="h2">EXPRESS CURATE</h2>
+       <span class="express_curate_span">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+         <br>
+         <br>
+         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.v
+       </span>
+            </li>
+        </ul>
+
+
+        <!--footer_content div-->
+        <div class="footer_content">
+            <h2 class="subscribe">SUBSCRIBE TO "I LOVE JAVA" CLUB</h2>
+
+            <div class="subscribe_input">
+
+                <input class="white_input" placeholder="enter your email">
+                <input class="dark_input" name="subscribe" value="SUBSCRIBE" type="submit" onclick=" return subscribe()">
+
+                <div class="clear2"></div>
+
+
+            </div>
+
+            <p class="love_java">i love java! All rights reserved</p>
+
+            <p class="copyright">Copyright © 2014<a class="copy_express" href="http://www.expresscurate.com/"
+                                                    target="_blank"> expresscurate.com</a></p>
+
+            <p class="policy-terms"><a href="http://www.expresscurate.com/p/privacy.html" class="policy-terms-href"
+                                       target="_blank" id="policy">Privacy Policy</a> |
+                <a href="http://www.expresscurate.com/p/terms.html" id="terms" class="policy-terms-href"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    function fbShareFunc(){
+        var url=document.URL;
+   fbShare(url, 'we love java because', 'we love java because', 'http://127.0.0.1:3000/', 520, 350)
+    }
+
+    function tweetShare(){
+        var url=document.URL,
+            text = $(".btn").attr("name");
+        console.log(text + "btn");
+        window.open("http://www.twitter.com/share?text=I love java because"+ text );
+    }
+
+
+
+</script>
+
+</body>
+</html>

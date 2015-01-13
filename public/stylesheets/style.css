@@ -1,0 +1,38 @@
+@import "reset.css";
+
+@font-face {
+  font-family: "Segoe UI Semibold";
+  src: url(../fonts/segoeui.ttf);
+}
+
+
+@font-face {
+  font-family:"OpenSans-Semibold" ;
+  src: url("../fonts/OpenSans-Semibold.ttf");
+}
+
+@font-face {
+  font-family: "Lobster_1.3";
+  src: url("../fonts/Lobster_1.3.otf");
+}
+
+@font-face {
+  font-family:"OpenSans Light" ;
+  src: url("../fonts/0ZlzdleM.ttf");
+}
+
+
+button:focus {
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+
+.clear2{
+  clear: both;
+}
+
+input[type="radio"]{
+  vertical-align: bottom;
+}

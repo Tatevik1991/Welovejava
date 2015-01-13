@@ -1,0 +1,137 @@
+@import "reset.css";
+@import "style.css";
+
+.open-home-page{
+    cursor: pointer;
+}
+
+.sp_plugin-button{
+    background-image:url('../images/like_note.png');
+}
+
+.add:hover{
+    background-color: #086057;
+}
+.like:hover{
+    background-color:#0F6899;
+}
+
+.heart{
+    background-image: url("../images/Group.png");
+    width: 107px;
+    height: 97px;
+}
+.love{
+    background-image: url("../images/love.png");
+    width: 181px;
+    height: 47px;
+}
+.java{
+    background-image: url("../images/java.png");
+    width: 168px;
+    height: 47px;
+
+}
+.powerlove>div{
+    float: left;
+}
+
+.like_note{
+    background-image: url("../images/like_note.png");
+    width: 34px;
+    height: 33px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.add{
+    cursor: pointer;
+    text-align: center;
+    height: 54px;
+    width: 213px;
+    background-color: #00897b;
+    border: none;
+    font-size: 20px;
+    color: white;
+}
+
+.add, .like{
+    float: left;
+}
+.a_link{
+    text-decoration: none;
+}
+
+.like{
+    line-height: 53px;
+    height: 54px;
+    width: 130px;
+    background-color: #0288d1;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 13px;
+}
+
+.header{
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 170px;
+    padding-top: 38px;
+    margin: 0 auto;
+}
+
+.power, .exp{
+    font-family:"Segoe UI Semibold";
+    font-size: 25px;
+    color: #4db5ab;
+    word-spacing: 1px;
+}
+
+.all>div{
+    float: left;
+}
+
+.heart, .powerlove{
+    float: left;
+}
+
+.note{
+    margin-left: 13px;
+    vertical-align: middle;
+}
+
+.powerlove{
+    width: 367px;
+}
+
+.heartlovepower{
+    width: 500px;
+}
+
+.buttons{
+    width:361px;
+    padding-top: 50px;
+    margin-left: 450px;
+    position: relative;
+    width:361px;
+    padding-top: 50px;
+    margin-left: 450px;
+
+}
+
+.powerlove{
+    margin-left: 25px;
+    padding-top: 25px;
+}
+
+.exp{
+    color:#535354;
+}
+
+.all{
+    width: 1311px;
+    margin: 0 auto;
+}

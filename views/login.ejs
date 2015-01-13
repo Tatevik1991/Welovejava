@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>We Love Java</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+    <script src="/javascripts/jquery-1.11.1.min.js"></script>
+    <script src="/javascripts/login.js"></script>
+</head>
+
+
+<body class="login-content">
+<div class="login-all">
+    <div class="login-menu">
+        <div class="show-login-div">
+            <span class="show-login" onclick="return showLogin()">Login</span>
+        </div>
+        <div class="show-log-pass-div">
+            <span  class="show-log-pass" onclick="return showLogPass()">Change credentials</span>
+        </div><div class="clear2"></div>
+    </div>
+    <div class="login-login reg-show">
+
+            <div class="login-middle">
+                <input type="text" name = "username" placeholder = "username"  class="login-username">
+                <input type="password" name = "password" placeholder = "password"  class="login-password">
+                <input type = "submit" value = "Login" class="login-btn" onclick="return login()">
+            </div>
+
+    </div>
+
+    <div class="change-log-pass reg-hidden">
+        <div class="change-log-pass-middle">
+
+            <input type="text" class="new-login div-new-login" placeholder="New login"/>
+
+            <input type="password" class="current-password div-current-pass"  placeholder="Current password"/>
+
+            <input type="password" class="new-password div-new-pass" placeholder="New password   "/>
+
+            <div class="login-btn-err">
+                <div class="div-change-input"><input type="button" value="Change" class="change-input"  onclick="return ChangeLogOrPass()"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+
+</script>
+</body>

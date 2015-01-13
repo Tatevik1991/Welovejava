@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+    <link rel='stylesheet' href='/stylesheets/header.css'/>
+    <link rel='stylesheet' href='/stylesheets/footer.css'/>
+
+    <script src="/javascripts/jquery-1.11.1.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+    <script src="/javascripts/footer.js"></script>
+    <script src="/javascripts/header.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="all">
+        <div class="heartlovepower">
+            <div onclick="openHomePage()" class="open-home-page">
+                <div class="heart"></div>
+                <div class="powerlove">
+                    <div class="love"></div>
+                    <div class="java"></div>
+                    <span class="power">powered by</span><span class="exp"> expresscurate</span>
+                </div>
+                <div class="clear2"></div>
+            </div>
+        </div>
+        <div class="buttons">
+
+                <button class="add" onclick="openExpressYourLove()">ADD LOVE NOTE</button>
+
+
+                <button class="like" onclick="openSourcioFb()">
+                    <div class="like_note"></div>
+                    <span class="note">LIKE</span>
+                </button>
+
+        </div>
+    </div>
+    <div class="clear2"></div>
+</div>
+<!--header-->
+
+<!--masonry-->
+<div id="content">
+    <ul id="container" class="masonry js-masonry" data-masonry-options='{ "isFitWidth": true }'>
+        <% for(var i = 0; i < data.length; i++)
+        { %>
+        <li class="item <%= page %>" id="<%= data[i]._id %>" >
+            <div class="note-inner">
+     <span class="love-heading">
+             <span class="i-love"> I
+              <img src="../images/gruop1.png" class="group-img">
+              JAVA
+              BECAUSE
+               </span>
+            <span class="note_message"><%= data[i].message %></span>
+           <span class="twitter">
+            <%= data[i].name%>
+           </span>
+
+        </span>
+            </div>
+            <div class="note-overlay">
+                <div class="outer">
+                    <div class="middle" >
+                        <div class="details-btn">
+                   <span class="details">
+      <div  class="view"  id="<%= data[i].message%>-<%= data[i]._id %>" onclick="return openViewItem(this)">
+        VIEW
+        <img class="group-img" src="../images/gruop1.png">
+        NOTE
+      </div>
+          </span>
+                   <div class="fbShareUrl" >
+
+                    <button class="fb-btn" id="<%= data[i].message%>-<%= data[i]._id %>" onclick="return fbShareFunc(this)" >
+                        facebook
+                    </button>
+                   </div>
+                            <div class="btn"  id="<%= data[i].message%>-<%= data[i]._id %>"
+                                 onclick="return tweetShare(this)">
+                                <button class="tw-btn">tweet</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+</div>
+<div class="points-div"></div>
+<input type="button" class="show" value="Show more" onclick="return showMore()"/>
+<input type="hidden" value="<%= lastDate %>" id="lastDate">
+<input type="hidden" value="<%= lastDataID %>" id="lastDataID">
+<input type="hidden" value="<%= page %>" id="scrollPage">
+
+
+<!--footer--->
+<div class="footer">
+    <div class="footer_container">
+        <ul class="footer_ul">
+            <li class="about"><h2 class="h2">ABOUT</h2>
+        <span class="about_span">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </span>
+            </li>
+
+            <li class="express_curate"><h2 class="h2">EXPRESS CURATE</h2>
+       <span class="express_curate_span">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+         <br>
+         <br>
+         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.v
+       </span>
+            </li>
+        </ul>
+
+
+        <!--footer_content div-->
+        <div class="footer_content">
+            <h2 class="subscribe">SUBSCRIBE TO "I LOVE JAVA" CLUB</h2>
+
+            <div class="subscribe_input">
+
+                    <input class="white_input" placeholder="enter your email">
+                    <input class="dark_input" name="subscribe" value="SUBSCRIBE" type="submit" onclick=" return subscribe()">
+
+                    <div class="clear2"></div>
+
+
+            </div>
+
+            <p class="love_java">i love java! All rights reserved</p>
+
+            <p class="copyright">Copyright © 2014<a class="copy_express" href="http://www.expresscurate.com/"
+                                                    target="_blank"> expresscurate.com</a></p>
+
+            <p class="policy-terms"><a href="http://www.expresscurate.com/p/privacy.html" class="policy-terms-href"
+                                       target="_blank" id="policy">Privacy Policy</a> |
+                <a href="http://www.expresscurate.com/p/terms.html" id="terms" class="policy-terms-href"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+<script>
+
+    $('.middle').on('click', function(e) {
+        if( e.target !== this )
+            return;
+        var item=$($($(e.target).children()[0]).children()[0]).children()[0];
+       openViewItem(item);
+    });
+
+    function tweetShare(item){
+
+       var url=itemUrlMaker(item);
+              console.log(url)
+        var id =$(item).attr("id"),
+
+           arrayText=id.split('-'),
+                text=arrayText.slice(0, arrayText.length-1),
+
+            href = "https://twitter.com/share?url="+url+"&text=I love java because "+text;
+
+        window.open(href);
+
+    }
+
+    function fbShareFunc(item) {
+        var url=itemUrlMaker(item);
+        console.log(url)
+        fbShare(url, 'we love java because', 'we love java because', '', 520, 350);
+    }
+
+</script>

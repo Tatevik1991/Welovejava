@@ -1,0 +1,299 @@
+@import "reset.css";
+@import "style.css";
+
+
+
+.close-CensoredWords, .censoredWord-span, .censore-select-all,
+.open-censoredWords, .item-admin, .admin-select-all, #all, #pending, #approved, #declined, #words-18plus{
+    cursor: pointer;
+}
+.admin-tweet{
+cursor: pointer;
+margin-top: 23px;
+font-size:20px;
+color:#00796b;
+font-family: "Lobster_1.3";}
+
+.admin-select-all, #selectBox{
+    font-family: "Segoe UI Semibold";
+}
+
+#all, #pending, #approved, #declined, #words-18plus{
+    color: #034742;
+    font-family: "Segoe UI Semibold";
+}
+
+.admin-selectAll-censoredWord{
+    text-align: right;
+}
+
+.censoredWords-popup{
+    font-family: "Segoe UI Semibold";
+}
+.apply{
+    height: 19px;
+    width: 65px;
+    margin-left: 4px;
+    color: #fff;
+    border: none;
+    background-color: #00897b;
+    cursor: pointer;
+}
+
+.apply:hover{
+    background-color: #086057;
+
+}
+.apply-select{
+    margin-left: 15px;
+}
+.admin-selectAll{
+    margin-left: 15px;
+}
+#selectBox, .apply{
+    float: left;
+}
+
+.censoredWords-popup, .apply-select, .admin-selectAll, .form-href{
+    float: left;
+}
+
+#selectBox:focus{
+    outline: none;
+}
+
+
+.admin-all{
+    width: 1180px;
+    margin: 24px auto;
+}
+
+/*.recycle-bin-img{*/
+    /*width: 20px;*/
+    /*display: block;*/
+/*}*/
+.recycle-bin{
+
+    background-image: url("../images/recycleBin.png");
+    background-size: 20px 20px;
+    display: block;
+    cursor: pointer;
+    margin-left: 8px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+
+}
+.div-CensoredWords {
+    margin: 2px 17px 0 0;
+    text-align: right;
+}
+
+.form-href{
+    margin-left: 430px;
+}
+
+.scrollup {
+    top: 90%;
+    margin-left: 60px;
+    position: fixed;
+}
+
+.censoredWords::-webkit-scrollbar {
+    width: 8px;
+}
+
+.censoredWords::-webkit-scrollbar-track {
+    background-color: #00897b;
+
+}
+.censoredWords::-webkit-scrollbar-thumb {
+    background-color: #0f544d;
+}
+
+.censoredWords{
+    line-height: 20px;
+    word-wrap: break-word;
+    width: 415px;
+    height:auto;
+    min-height: 42px;
+    max-height: 155px;
+    margin: 3px auto 3px;
+    overflow:auto;
+}
+.add-censoredWord {
+    border: none;
+    height: 21px;
+    width: 21px;
+    margin-left: 3px;
+    background-color: #00897b;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.admin-filter-hover{
+    opacity: 0;
+}
+
+.item-admin:hover .admin-filter-hover{
+    opacity: 1;
+}
+
+.cenWords-add-cenWord-hidden{
+    display: none;
+}
+
+.cenWords-add-cenWord-show{
+    display: block;
+}
+
+.censoredWords-add-censoredWord{
+    margin-left: 20px;
+    position: absolute;
+    background-color: #99FDD4;
+    z-index: 2;
+    width: 450px;
+
+}
+.add-censoredWord:hover{
+    background-color: #086057;
+}
+.censoredWord-span{
+padding: 2px;
+    text-overflow: ellipsis;
+}
+
+
+.censoredWords-content{
+    padding-right: 5px;
+}
+
+.admin-select-all-checkbox{
+    margin-left: 9px;
+}
+
+.write-censoredWord, .add-censoredWord, .recycle-bin, .admin-select-all-checkbox, .censore-select-all {
+    float: left;
+}
+
+.censoredWord{
+    float: left;
+    width: 90px;
+    margin-left: 10px;
+}
+
+.add-censoredWord-dvi{
+    margin: 15px 0px 5px 15px;
+}
+
+.masonry {
+    background: white;
+    margin: 0 auto;
+    top: 7px;
+}
+
+
+
+.item-admin {
+    border-radius: 3px;
+    width: 381px;
+    background: #3bafa4;
+    margin:10px;
+}
+.admin-points-div{
+    position: absolute;
+    font-family: "OpenSans-Semibold";
+    text-align: center;
+    margin: 45px auto 55px 49.7%;
+    font-size: 45px;
+    color: #00897b;;
+}
+
+.item-admin .admin-note-inner{
+    padding:20px 20px 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.admin-note-inner{
+    /*padding: 30px 37px 40px;*/
+    padding: 15px 37px 26px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-note-inner-text{
+    cursor: pointer;
+}
+
+.admin-message{
+    font-size: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    color: white;
+    box-sizing: border-box;
+    font-family: "Segoe UI Semibold";
+    line-height: 28px;
+}
+
+.admin-name{
+    cursor: default;;
+    margin-top: 23px;
+    font-size:20px;
+    color:#00796b;
+    font-family: "Lobster_1.3";
+}
+
+.item-admin-label{
+    width: 253px;
+    margin-top: 17px;
+}
+
+.admin-label-note-content{
+    width: 253px;
+    font-size: 15px;
+    color: white;
+    font-family: 'arial';
+}
+
+.admin-label{
+    cursor: pointer;
+}
+
+.admin-18plus-status{
+    font-size: 15px;
+    margin-top: -15px;
+    color: #ffffff;
+    width: 48px;
+    float: right;
+    cursor: pointer;
+
+}
+.admin-18checkbox{
+    float: right;
+    margin-top: -14px;
+}
+
+.admin-show{
+    width: 123px;
+    height:36px;
+    color: #ffffff;
+    text-align: center;
+    font-family: "OpenSans-Semibold";
+    margin: 115px auto 55px 46.7%;
+    background-color: #00897b;
+    display: block;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+/*.admin-filter-hover{*/
+    /*opacity: 0;*/
+/*}*/
+/*.item-admin:hover .admin-filter-hover{*/
+    /*opacity: 1;*/
+/*}*/

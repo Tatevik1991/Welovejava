@@ -1,0 +1,179 @@
+@import "reset.css";
+@import "style.css";
+.form-all{
+    width:1102px;
+    height: 774px;
+    margin: 0 auto;
+}
+
+.form-content{
+    width: 1102px;
+    height: 450px;
+    background-color: #3bafa4;
+    margin: 28px auto 0 ;
+
+}
+
+
+.form-love-java{
+    letter-spacing: 1px;
+    margin-left: 75px;
+    width: 959px;
+    color: #ffffff;
+    font-size: 83px;
+    font-weight: bold;
+    font-family:"Segoe UI Semibold";
+    padding-top: 55px;
+}
+
+.form-group-img{
+    width: 100px;
+    vertical-align: middle;
+}
+
+.form-submit, .form-error{
+    float:left;
+}
+
+
+.form-text{
+    position: relative;
+    margin: 20px auto;
+    width: 959px;
+    height: 240px;
+}
+
+.form-text-area{
+    resize: none;
+    width: 959px;
+    height: 240px;
+    background-color: #3bafa4 ;
+    color: #ffffff;
+    font-size: 60px;
+    border: none;
+}
+.form-text-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.form-text-area::-webkit-scrollbar-track {
+    background-color: #00897b;
+
+}
+.form-text-area::-webkit-scrollbar-thumb {
+    background-color: #0f544d;
+}
+
+textarea {
+    border: none;
+    outline: none;
+}
+
+.form-info{
+    width: 1102px;
+    height: 203px;
+    margin: 0 auto;
+    background-color: #00897b;
+}
+
+
+.form-sign-recaptcha{
+    width: 972px;
+    margin: 0 auto;
+    padding-top: 23px;
+}
+
+.form-sign{
+    width:530px;
+}
+.form-tweet{
+    width:500px;
+    height: 60px;
+    background-color: #22a397;
+    color: #8ddbd4;
+    font-family: "OpenSans Light";
+    font-size: 28px;
+    border: none;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.form-submit{
+    background-color: #e6f3f2;
+    height: 60px;
+    width: 148px;
+    text-align: center;
+    color: #00897b;
+    font-size: 25px;
+    border: none;
+    margin-top: 8px;
+    z-index: 1;
+    cursor: pointer;
+
+}
+.form-submit:hover{
+    background-color: #ccedea;
+    -webkit-transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+
+.form-error{
+    color: rgb(215, 30, 30);
+    display: block;
+    font-size: 20px;
+    font-family: "OpenSans Light";
+    font-weight: bold;
+    text-align: center;
+    line-height:68px;
+    margin-left: 45px;
+}
+
+.form-sign, .recaptcha-submit{
+    float: left;
+}
+
+
+#recaptcha_switch_img{display: none;}
+#recaptcha_logo{ display: none;}
+.recaptcha_only_if_privacy{ display: none;}
+#recaptcha_whatsthis{display: none;}
+#recaptcha_switch_audio{display: none;}
+
+#recaptcha_table{
+    width: 408px;
+    height: 127px;
+    background-color: #ffffff;
+}
+
+#recaptcha_area{
+    position: relative;
+    width: 408px;
+    height: 127px;
+    background-color: #ffffff;
+
+}
+#recaptcha_reload{
+    position: absolute;
+    width: 69px;
+    height: 69px;
+}
+#recaptcha_table>tbody>tr:nth-child(2){
+    padding: 0px 7px 7px 7px;
+}
+
+#recaptcha_response_field {
+    background-color: #e4e4e4;
+    height: 45px;
+    border: none !important;
+    font-size: 20px !important;
+    font-family:'opensans light' !important;
+    text-indent:20px !important;
+}
+
+.recaptcha-submit{
+    margin-left: 34px;
+}
+
+iframe {
+    display: none;
+}

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<title>We Love Java</title>
+<link rel='stylesheet' href='/stylesheets/style.css'/>
+<link rel='stylesheet' href='/stylesheets/admin.css'/>
+<link rel='stylesheet' href='/stylesheets/header.css'/>
+<script src="/javascripts/jquery-1.11.1.min.js"></script>
+<script src="/javascripts/admin.js"></script>
+<script src="/javascripts/header.js"></script>
+<script src="/javascripts/contAdmin.js"></script>
+<script src="/javascripts/wrappAdmin.js"></script>
+<script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="all">
+        <div class="heartlovepower">
+            <div onclick="openHomePage()" class="open-home-page">
+                <div class="heart"></div>
+                <div class="powerlove">
+                    <div class="love"></div>
+                    <div class="java"></div>
+                    <span class="power">powered by</span><span class="exp"> expresscurate</span>
+                </div>
+                <div class="clear2"></div>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="http://localhost:3000/express-your-love" class="a_link">
+                <button class="add"> ADD LOVE NOTE</button>
+            </a>
+
+                <form method="get" action="/login/logout">
+                    <input type="submit" value="Logout" class="like">
+                </form>
+
+
+            <div class="clear2"></div>
+        </div>
+        <div class="clear2"></div>
+    </div>
+    <div class="clear2"></div>
+</div>
+<!--end of header-->
+<div class="admin-all">
+<div class="censoredWords-popup">
+<div class="open-censoredWords" onclick="return openCensoredWords()">18+ words list</div>
+<div class="censoredWords-add-censoredWord cenWords-add-cenWord-hidden">
+    <div class="div-CensoredWords">
+        <span class="close-CensoredWords" onclick="return closeCensoredWords()">x</span>
+    </div>
+    <div  class="censoredWords">
+        <p class="censoredWords-content">
+
+            <% for(var i = 0; i < censoredWords.length; i++) { %>
+            <span class="censoredWord-span" id="<%= censoredWords[i].word %>" onclick="return selectCensoredWord(this)"><%= censoredWords[i].word %>, </span>
+            <% } %>
+        </p>
+    </div>
+    <div class="add-censoredWord-dvi">
+        <input type="text" class="write-censoredWord" id="admin-plus"  value="" name="plus18">
+        <input type="submit" value="+" class="add-censoredWord" onclick="return addCensoredWord()">
+
+        <input type="checkbox" class="admin-select-all-checkbox" onchange="return selectAllCensoredWord(this)">
+        <span class="censore-select-all" onclick="return selectWords(this)">All</span>
+
+        <div class="recycle-bin" onclick="return removeCensoredWords()">
+
+        </div>
+        <div class="clear2"></div>
+</div>
+    </div>
+</div>
+
+
+<div class="apply-select">
+<select id="selectBox">
+    <option value="pending">Pending</option>
+    <option value="approved">Approve</option>
+    <option value="declined">Decline</option>
+</select>
+    <input type="button" value="Apply" class="apply" onclick="return apply()">
+<div class="clear2"></div>
+</div>
+
+<div class="admin-selectAll">
+    <input type="checkbox" class="admin-select-all-checkbox" onchange="return selectAll(this)">
+    <span class="admin-select-all" onclick="return selectAllWord(this)">Select All</span>
+</div>
+
+<div class="form-href">
+    <span id="all" onclick="return getSelectData(this)">All(<%= allCount %>)</span>
+    <span id="pending"  onclick="return getSelectData(this)">Pending(<%= countPending %>)</span>
+    <span id="approved" onclick="return getSelectData(this)">Approved(<%= countApproved %>)</span>
+    <span  id="declined" onclick="return getSelectData(this)">Declined(<%= countDeclined %>)</span>
+    <span id="words-18plus" onclick="return getSelectData(this)">18+(<%= count18plus %>)</span>
+</div>
+<div class="clear2"></div>
+</div>
+
+<div id="container" class="masonry js-masonry" data-masonry-options='{ "isFitWidth": true }'>
+    <% for(var i in data) { %>
+    <% if ( data[i].status == "approved") { %>
+    <% if ( data[i].status18plus == "yes") { %>
+    <div class="item-admin" >
+        <div class="admin-note-inner" >
+
+            <input type="checkbox" id="<%= data[i]._id %>" class="admin-note-checkbox" >
+            <div class="admin-note-inner-text" onclick="return selectCheckbox(this)">
+                <span class="admin-message" ><%= data[i].message %></span>
+            </div>
+            <% if ( data[i].name[0] == "@") { %>
+            <p class="admin-tweet" onclick="return twitterURL(this)"><%= data[i].name %></p>
+            <% } else { %>
+            <p class="admin-name"><%= data[i].name %></p>
+            <% } %>
+            <div class="admin-filter-hover">
+                <div class="item-admin-label">
+                        <div class="admin-label-note-content">
+                            <label class="admin-label" for="<%= data[i]._id %>pending">Pending</label>
+                            <input type="radio" value="pending" id="<%= data[i]._id %>pending" name="<%= data[i]._id %>"
+                                    class="radio" onchange="return changeStatusSelectItem(this)">
+
+                            <label class="admin-label" for="<%= data[i]._id %>approved">Approve</label>
+                            <input type="radio" value="approved" id="<%= data[i]._id %>approved" name="<%= data[i]._id %>"
+                                   class="radio" checked onchange="return changeStatusSelectItem(this)">
+
+                            <label class="admin-label" for="<%= data[i]._id %>declined">Decline</label>
+                            <input type="radio" value="declined" id="<%= data[i]._id %>declined" name="<%= data[i]._id %>"
+                                    class="radio" onchange="return changeStatusSelectItem(this)">
+
+                        </div>
+                    </div>
+
+                <div class="admin-18plus-status" onclick="return divChange18plusStatus(this)">18+</div>
+                <input type="checkbox" checked="checked" id="<%= data[i]._id %>"
+                       name="<%= data[i].status18plus %>"  class="admin-18checkbox" onchange="return change18plusStatus(this)"/>
+
+                <div class="clear2"></div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <% if ( data[i].status18plus == "no") { %>
+    <div class="item-admin" >
+        <div class="admin-note-inner" >
+
+            <input type="checkbox" id="<%= data[i]._id %>" class="admin-note-checkbox" value="">
+            <div class="admin-note-inner-text" onclick="return selectCheckbox(this)">
+                <span class="admin-message" ><%= data[i].message %></span>
+
+            </div>
+            <% if ( data[i].name[0] == "@") { %>
+            <p class="admin-tweet" onclick="return twitterURL(this)"><%= data[i].name %></p>
+            <% } else { %>
+            <p class="admin-name"><%= data[i].name %></p>
+            <% } %>
+
+            <div class="admin-filter-hover">
+
+                <div class="item-admin-label">
+                    <div class="admin-label-note-content">
+                        <label class="admin-label" for="<%= data[i]._id %>pending">Pending</label>
+                        <input type="radio" value="pending" id="<%= data[i]._id %>pending" name="<%= data[i]._id %>"
+                                class="radio" onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>approved">Approve</label>
+                        <input type="radio" value="approved" id="<%= data[i]._id %>approved" name="<%= data[i]._id %>"
+                                class="radio" checked onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>declined">Decline</label>
+                        <input type="radio" value="declined" id="<%= data[i]._id %>declined" name="<%= data[i]._id %>"
+                               class="radio" onchange="return changeStatusSelectItem(this)">
+
+                    </div>
+                </div>
+
+                <div class="admin-18plus-status"   onclick="return divChange18plusStatus(this)">18+</div>
+                <input type="checkbox"  id="<%= data[i]._id %>"
+                       name="<%= data[i].status18plus %>"  class="admin-18checkbox"  onchange="return change18plusStatus(this)" />
+
+                <div class="clear2"></div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <% } %>
+    <% if ( data[i].status == "pending") { %>
+    <% if ( data[i].status18plus == "yes") { %>
+    <div class="item-admin">
+        <div class="admin-note-inner"   >
+
+            <input type="checkbox" id="<%= data[i]._id %>" class="admin-note-checkbox" value="">
+            <div class="admin-note-inner-text"  onclick="return selectCheckbox(this)">
+                <span class="admin-message"><%= data[i].message %></span>
+
+            </div>
+            <% if ( data[i].name[0] == "@") { %>
+            <p class="admin-tweet" onclick="return twitterURL(this)"><%= data[i].name %></p>
+            <% } else { %>
+            <p class="admin-name"><%= data[i].name %></p>
+            <% } %>
+
+            <div class="admin-filter-hover">
+
+                <div class="item-admin-label">
+                    <div class="admin-label-note-content">
+                        <label class="admin-label" for="<%= data[i]._id %>pending">Pending</label>
+                        <input type="radio" value="pending" id="<%= data[i]._id %>pending" name="<%= data[i]._id %>"
+                                class="radio" checked onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>approved">Approve</label>
+                        <input type="radio" value="approved" id="<%= data[i]._id %>approved" name="<%= data[i]._id %>"
+                               class="radio" onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>declined">Decline</label>
+                        <input type="radio" value="declined" id="<%= data[i]._id %>declined" name="<%= data[i]._id %>"
+                               class="radio" onchange="return changeStatusSelectItem(this)">
+
+                    </div>
+                </div>
+
+                <div class="admin-18plus-status" onclick="return divChange18plusStatus(this)">18+</div>
+                <input type="checkbox" checked="checked" id='<%= data[i]._id %>'
+                       name="<%= data[i].status18plus %>"  class="admin-18checkbox" onchange='return change18plusStatus(this)' />
+
+                <div class="clear2"></div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <% if ( data[i].status18plus == "no") { %>
+    <div class="item-admin">
+        <div class="admin-note-inner" >
+
+            <input type="checkbox" id="<%= data[i]._id %>" class="admin-note-checkbox" value="">
+            <div class="admin-note-inner-text" onclick="return selectCheckbox(this)">
+                <span class="admin-message" ><%= data[i].message %></span>
+
+            </div>
+            <% if ( data[i].name[0] == "@") { %>
+            <p class="admin-tweet" onclick="return twitterURL(this)"><%= data[i].name %></p>
+            <% } else { %>
+            <p class="admin-name"><%= data[i].name %></p>
+            <% } %>
+
+            <div class="admin-filter-hover">
+
+                <div class="item-admin-label">
+                    <div class="admin-label-note-content">
+                        <label class="admin-label" for="<%= data[i]._id %>pending">Pending</label>
+                        <input type="radio" value="pending" id="<%= data[i]._id %>pending" name="<%= data[i]._id %>"
+                                class="radio" checked onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>approved">Approve</label>
+                        <input type="radio" value="approved" id="<%= data[i]._id %>approved" name="<%= data[i]._id %>"
+                               class="radio"  onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>declined">Decline</label>
+                        <input type="radio" value="declined" id="<%= data[i]._id %>declined" name="<%= data[i]._id %>"
+                                class="radio" onchange="return changeStatusSelectItem(this)">
+
+                    </div>
+                </div>
+
+                <div class="admin-18plus-status" onclick="return divChange18plusStatus(this)" >18+</div>
+                <input type="checkbox"  id='<%= data[i]._id %>'
+                       name="<%= data[i].status18plus %>"  class="admin-18checkbox" onchange="return change18plusStatus(this)" />
+
+                <div class="clear2"></div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <% } %>
+    <% if ( data[i].status == "declined") { %>
+    <% if ( data[i].status18plus == "yes") { %>
+    <div class="item-admin" >
+        <div class="admin-note-inner"  >
+
+            <input type="checkbox" id="<%= data[i]._id %>" class="admin-note-checkbox" value="">
+            <div class="admin-note-inner-text" onclick="return selectCheckbox(this)">
+                <span class="admin-message"><%= data[i].message %></span>
+
+            </div>
+            <% if ( data[i].name[0] == "@") { %>
+            <p class="admin-tweet" onclick="return twitterURL(this)"><%= data[i].name %></p>
+            <% } else { %>
+            <p class="admin-name"><%= data[i].name %></p>
+            <% } %>
+
+            <div class="admin-filter-hover">
+
+                <div class="item-admin-label">
+                    <div class="admin-label-note-content">
+                        <label class="admin-label" for="<%= data[i]._id %>pending">Pending</label>
+                        <input type="radio" value="pending" id="<%= data[i]._id %>pending" name="<%= data[i]._id %>"
+                               class="radio" onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>approved">Approve</label>
+                        <input type="radio" value="approved" id="<%= data[i]._id %>approved" name="<%= data[i]._id %>"
+                                class="radio" onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>declined">Decline</label>
+                        <input type="radio" value="declined" id="<%= data[i]._id %>declined" name="<%= data[i]._id %>"
+                                class="radio" checked onchange="return changeStatusSelectItem(this)">
+
+                    </div>
+                </div>
+
+                <div class="admin-18plus-status" onclick="return divChange18plusStatus(this)">18+</div>
+                <input type="checkbox" checked="checked" id='<%= data[i]._id %>'
+                       name="<%= data[i].status18plus %>"  class="admin-18checkbox" onchange='return change18plusStatus(this)' />
+
+                <div class="clear2"></div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <% if ( data[i].status18plus == "no") { %>
+    <div class="item-admin" >
+        <div class="admin-note-inner"  >
+
+            <input type="checkbox" id="<%= data[i]._id %>" class="admin-note-checkbox" value="">
+            <div class="admin-note-inner-text"  onclick="return selectCheckbox(this)">
+                <span class="admin-message" ><%= data[i].message %></span>
+
+            </div>
+            <% if ( data[i].name[0] == "@") { %>
+            <p class="admin-tweet" onclick="return twitterURL(this)"><%= data[i].name %></p>
+            <% } else { %>
+            <p class="admin-name"><%= data[i].name %></p>
+            <% } %>
+
+            <div class="admin-filter-hover">
+
+                <div class="item-admin-label">
+                    <div class="admin-label-note-content">
+                        <label class="admin-label" for="<%= data[i]._id %>pending">Pending</label>
+                        <input type="radio" value="pending" id="<%= data[i]._id %>pending" name="<%= data[i]._id %>"
+                                class="radio" onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>approved">Approve</label>
+                        <input type="radio" value="approved" id="<%= data[i]._id %>approved" name="<%= data[i]._id %>"
+                                class="radio"  onchange="return changeStatusSelectItem(this)">
+
+                        <label class="admin-label" for="<%= data[i]._id %>declined">Decline</label>
+                        <input type="radio" value="declined" id="<%= data[i]._id %>declined" name="<%= data[i]._id %>"
+                                class="radio" checked onchange="return changeStatusSelectItem(this)">
+
+                    </div>
+                </div>
+
+                <div class="admin-18plus-status" onclick="return divChange18plusStatus(this)">18+</div>
+                <input type="checkbox"  id='<%= data[i]._id %>'
+                       name="<%= data[i].status18plus%>"  class="admin-18checkbox" onchange="return change18plusStatus(this)" />
+
+                <div class="clear2"></div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+    <% } %>
+    <% } %>
+</div>
+
+<div class="admin-points-div"></div>
+<input type="button" class="admin-show" value="Show more" onclick="return adminShowMore()"/>
+<input type="hidden" value="<%= lastDate %>" id="lastDate">
+<input type="hidden" value="<%= lastDataId %>" id="lastDataId">
+
+<script>
+
+    $('.admin-note-inner').on('click', addCheckEvent);
+
+
+    window.onclick=function(e){
+        var censoredWordsAddCensoredWord=$(".censoredWords-add-censoredWord");
+        censoredWordsAddCensoredWord.click(function(e){
+            e.stopPropagation();
+
+        });
+
+        if (e.target === censoredWordsAddCensoredWord) {
+
+            return;
+        } else {
+            closeCensoredWords()
+
+        }
+    }
+
+
+    function addCheckEvent(e){
+        if (e.target !== this) {
+
+            return;
+        } else {
+            var item = $(e.target).children()[0];
+            if ($(item).prop("checked") == false) {
+                $(item).prop("checked", true)
+            } else {
+                $(item).prop("checked", false)
+            }
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

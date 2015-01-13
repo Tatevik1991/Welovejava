@@ -1,0 +1,188 @@
+@import "reset.css";
+@import "style.css";
+
+
+.view_content{
+    width: 1293px;
+    height: auto;
+    min-height: 450px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 125px;
+
+}
+
+.view_previous{
+    background-image: url("../images/previous.png");
+    width: 94px;
+    height: 94px;
+    cursor: pointer;
+    float: left;
+    margin-top: 180px;
+}
+
+.view_previmg,.view_nextimg {
+    width: 26px;
+    height: 57px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+
+.view_item{
+    width: 1102px;
+    height: auto;
+    min-height: 450px;
+    background-color: #3bafa4;
+    color: #ffffff;
+    margin: 0 auto;
+    float: left;
+}
+
+
+.view_inner{
+    width: 1060px;
+    margin: 0 auto;
+    height: auto;
+    -webkit-transition:margin-top .5s ease-in-out;
+    /*z-index:1;*/
+
+
+}
+
+.view_love-heading{
+    text-align: center;
+    list-style: none;
+    font-size:83px;
+    color: white;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 55px;
+    font-family: "Segoe UI Semibold";
+    font-weight: bold;
+
+
+}
+
+.view_img{
+    width: 100px;
+    vertical-align: sub;
+}
+
+.view_message {
+    width: 743px;
+    height: auto;
+    min-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px auto;
+    font-size: 65px;
+    font-family: "Segoe UI Semibold";
+}
+.view_message{
+    text-overflow: ellipsis;
+    width: 743px;
+    height: auto;
+    min-height: 200px;
+    overflow: hidden;
+    margin: 20px auto;
+    font-size:65px;
+    color: white;
+}
+
+
+.view_twitter{
+    text-align: center;
+    width:auto;
+    height: 85px;
+    background-color: #ffffff;
+    line-height: 85px;
+    float: right;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.view_image{
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.view_tweet, .view_tweet_url {
+    padding: 20px;
+    color: #00897b;
+    font-size: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Lobster_1.3";
+}
+
+
+.view_titter_url{
+
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.view_tweet_name{
+    padding: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.view_next{
+    background-image: url("../images/next.png");
+    /*background-color: #00897b;*/
+    width: 94px;
+    height: 94px;
+    cursor: pointer;
+    float: left;
+    margin-top: 180px;
+}
+
+.view_social_btn{
+    width: 278px;
+    height: 50px;
+    /*background-color: black;*/
+    float: left;
+    margin: 22px 94px;
+}
+.view_social_fb{
+    width: 152px;
+    height: 50px;
+    background-color: #08a090;
+    color: #ffffff;
+    border: none;
+    font-size: 23px;
+    font-family: "opensans-semibold";
+}
+
+.view_social_tweet{
+    width: 110px;
+    height: 50px;
+    margin-left: 10px;
+    background-color: #08a090;
+    color: #ffffff;
+    border: none;
+    font-size: 23px;
+    font-family: "opensans-semibold";
+}
+.view_social_fb:hover{
+    cursor: pointer;
+    background-color: #00897b;
+    -webkit-transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.view_social_tweet:hover{
+    cursor: pointer;
+    background-color: #00897b;
+    -webkit-transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+
+.fbShareUrl,.btn{
+    float: left;
+}
+
+.nameURL{
+    cursor:pointer;
+}

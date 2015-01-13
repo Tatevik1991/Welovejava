@@ -1,0 +1,193 @@
+@import "reset.css";
+@import "style.css";
+
+
+
+.login-all{
+    margin: 250px auto 0;
+    background-color: #ffffff;
+    width: 350px;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 0px 7px 20px #0f544d;
+}
+
+.div-change-input{
+    padding-top: 21px;
+}
+
+.show-log-pass-div,.show-login-div{
+    cursor: pointer;
+    float: left;
+    padding: 3px;
+    text-align: center;
+    color: #ffffff;
+
+}
+
+
+.show-login-div{
+    width: 55px;
+    background-color: #63BEB6;
+}
+
+.show-log-pass-div{
+    width: 143px;
+    background-color: #63BEB6;
+    opacity: 0.5;
+}
+
+.change-log-pass{
+    position: absolute;
+    height: 213px;
+    width: 350px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+
+.change-log-pass-middle{
+    color: rgb(51, 129, 111);;
+    margin: 0 auto;
+    width: 300px;
+    padding-top: 22px;
+}
+
+.login-menu{
+    padding-top: 15px;
+    margin: 0 auto;
+    width: 300px;
+    text-align: left;
+}
+
+
+.div-current-pass,.div-new-pass{
+    margin-top: 10px;
+
+}
+
+
+
+.new-login::-webkit-input-placeholder{
+    color: #26a69a;
+}
+.current-password::-webkit-input-placeholder{
+    color: #26a69a;
+}
+.new-password::-webkit-input-placeholder{
+    color: #26a69a;
+}
+
+.new-login:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.current-password:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.new-password:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.new-login, .current-password, .new-password{
+    text-indent: 12px;
+    width: 300px;
+    height: 36px;
+    color: #26a69a;
+    border: 1px solid #a9dbd6;
+    font-size:19px;
+    font-family: "OpenSans Light";
+}
+
+.change-input{
+    width: 100%;
+    background-color: #26a69a;
+    color: #ffffff;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.pas-log-answer{
+    margin-top: 14px;
+    position: absolute;
+}
+
+.login-login{
+    width: 350px;
+    position: absolute;
+}
+
+.reg-show{
+    visibility:visible;
+}
+.reg-hidden{
+    visibility:hidden;
+}
+
+.login-content{
+    width: 100%;
+    background-color: #3bafa4;
+}
+
+
+
+.login-middle{
+    width: 300px;
+    height: 140px;
+    margin:0 auto;
+    padding-top: 30px;
+
+}
+.login-username, .login-password{
+    width: 300px;
+    height: 43px;
+    font-size: 20px;
+    font-family: "OpenSans Light";
+    background-color: #ffffff;
+    color: #26a69a;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #a9dbd6;
+}
+.login-username:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.login-password:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.login-username::-webkit-input-placeholder{
+    color: #26a69a;
+}
+
+.login-password::-webkit-input-placeholder{
+    color: #26a69a;
+}
+
+.login-password{
+    margin-top: 10px;
+}
+.login-btn{
+    width: 100%;
+    background-color: #26a69a;
+    color: #ffffff;
+    font-size: 20px;
+    border: none;
+    border-radius: 2px;
+    margin-top: 45px;
+    padding: 5px 0;
+}
+.login-btn:hover{
+    background-color: #00796b;
+    color: #ffffff;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    -webkit-transition: top 1s ease-out 1s;
+    /*-webkit-transition-duration: 0.5s;*/
+
+}

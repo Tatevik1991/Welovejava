@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="/javascripts/jquery-1.11.1.min.js"></script>
+    <script src="/javascripts/footer.js"></script>
+    <script src="/javascripts/header.js"></script>
+    <script src="/javascripts/express-your-love.js"></script>
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel='stylesheet' href='/stylesheets/footer.css' />
+    <link rel='stylesheet' href='/stylesheets/express-your-love.css' />
+</head>
+<body>
+
+
+
+<!--header-->
+<div class="header">
+    <div class="all">
+        <div class="heartlovepower">
+            <div onclick="openHomePage()" class="open-home-page">
+                <div class="heart"></div>
+                <div class="powerlove">
+                    <div class="love" ></div>
+                    <div class="java"></div>
+                    <span class="power">powered by</span><span class="exp"> expresscurate</span>
+                </div>
+                <div class="clear2"></div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="add" onclick="openExpressYourLove()">ADD LOVE NOTE</button>
+
+                <button class="like" onclick="openSourcioFb()">
+                    <div class="like_note" ></div>
+                    <span class="note">LIKE</span>
+                </button>
+
+        </div>
+    </div>
+    <div class="clear2"></div>
+</div>
+<!--header-->
+
+
+
+
+<script type="text/javascript">
+    var RecaptchaOptions = {
+        theme : 'clean',
+        lang  : 'en'
+    };
+</script>
+
+<div class="form-all">
+  <div class="form-content">
+        <div class="form-love-java">
+         <span> I
+           <img src="../images/form-group.png" class="form-group-img"> JAVA
+           <span>BECAUSE</span>
+         </span>
+        </div>
+
+        <div class="form-text">
+            <textarea id ="message" name="message"  cols="40" rows="4"  maxlength="100" class="form-text-area"><%- message%></textarea>
+        </div>
+    </div>
+    <div class="form-info">
+        <div class="form-sign-recaptcha">
+            <div class="form-sign">
+
+                <input name="twitter" type="text" id="name"  maxlength="30" placeholder=" name or @twitter account" value="" class="form-tweet">
+
+                <input  name="submit"  type="submit"  value="submit" class="form-submit" onclick="return submitForm()">
+                <span class="form-error"><%- error%></span><div class="clear2"></div>
+
+            </div>
+            <div class="recaptcha-submit">
+                <div class="recaptcha"><%-recaptchaForm%> </div>
+            </div><div class="clear2"></div>
+      </div>
+   </div>
+</div>
+
+
+
+<!--footer--->
+<div class="footer">
+    <div class="footer_container">
+        <ul class="footer_ul">
+            <li class="about"><h2 class="h2">ABOUT</h2>
+        <span class="about_span">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </span>
+            </li>
+
+            <li class="express_curate"><h2 class="h2">EXPRESS CURATE</h2>
+       <span class="express_curate_span">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+         <br>
+         <br>
+         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.v
+       </span>
+            </li>
+        </ul>
+
+
+        <!--footer_content div-->
+        <div class="footer_content">
+            <h2 class="subscribe">SUBSCRIBE TO "I LOVE JAVA" CLUB</h2>
+
+            <div class="subscribe_input">
+
+                <input class="white_input" placeholder="enter your email">
+                <input class="dark_input" name="subscribe" value="SUBSCRIBE" type="submit" onclick=" return subscribe()">
+
+                <div class="clear2"></div>
+
+
+            </div>
+
+            <p class="love_java">i love java! All rights reserved</p>
+
+            <p class="copyright">Copyright © 2014<a class="copy_express" href="http://www.expresscurate.com/"
+                                                    target="_blank"> expresscurate.com</a></p>
+
+            <p class="policy-terms"><a href="http://www.expresscurate.com/p/privacy.html" class="policy-terms-href"
+                                       target="_blank" id="policy">Privacy Policy</a> |
+                <a href="http://www.expresscurate.com/p/terms.html" id="terms" class="policy-terms-href"
+                   target="_blank">Terms of service</a></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
